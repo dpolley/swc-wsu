@@ -1,5 +1,8 @@
 ##This is a new script for practicing git commit 
 
+##CHAAANGE
+
+
 library(ggplot2)
 gapminder <- read.csv("gapminder.csv")
 head(gapminder)
