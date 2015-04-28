@@ -1,0 +1,73 @@
+---
+title: "SWC Capstone exercise"
+author: "Drew Polley"
+date: "April 28, 2015"
+output: html_document
+---
+
+
+```{r, echo=FALSE}
+gapminder<-read.csv("~/Desktop/swc-wsu/gapminder.csv")
+head(gapminder)
+library(dplyr)
+library(ggplot2)
+```
+Capstone Exercise:
+Pick 3 Countries from the Gapminder data, make a scatter plot for each with GDP vs Year
+
+1. United States:
+```{r, echo=FALSE}
+plot_GDP <- 
+  function(country, data=gapminder)
+  {
+    the_country <- country
+    data %>% filter(country==the_country) %>%
+      ggplot(aes(y=gdpPercap*pop, x=year,
+                 color=year)) + 
+      geom_point() +
+      scale_x_log10()
+  }
+plot_GDP("United States")
+
+
+```
+
+GDP growth in the United States has been nearly linear
+
+
+2. China:
+```{r, echo=FALSE}
+plot_GDP <- 
+  function(country, data=gapminder)
+  {
+    the_country <- country
+    data %>% filter(country==the_country) %>%
+      ggplot(aes(y=gdpPercap*pop, x=year,
+                 color=year)) + 
+      geom_point() +
+      scale_x_log10()
+  }
+plot_GDP("China")
+```
+
+GDP growth in China has been exponenital over the last century
+
+3. Rwanda:
+```{r, echo=FALSE}
+plot_GDP <- 
+  function(country, data=gapminder)
+  {
+    the_country <- country
+    data %>% filter(country==the_country) %>%
+      ggplot(aes(y=gdpPercap*pop, x=year,
+                 color=year)) + 
+      geom_point() +
+      scale_x_log10()
+  }
+plot_GDP("Rwanda")
+```
+
+GDP in Rwanda has dropped during years of heavy conflict
+
+
+
