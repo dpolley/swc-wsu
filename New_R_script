@@ -1,0 +1,10 @@
+##This is a new script for practicing git commit 
+
+library(ggplot2)
+gapminder <- read.csv("gapminder.csv")
+head(gapminder)
+
+gapminder %>%
+	filter(country == "United States") %>%
+	ggplot(aes(x=lifeExp, y=pop)) + 
+	geom_point()
