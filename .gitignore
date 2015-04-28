@@ -1,0 +1,4 @@
+##Patterns and files you don't want to track with git
+
+*.png  ##No PNG files will be added
+
